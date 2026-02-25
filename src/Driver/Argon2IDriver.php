@@ -20,28 +20,28 @@ class Argon2IDriver extends AbstractDriver implements DriverInterface
      *
      * @var int
      */
-    protected $memory = 1024;
+    protected int $memory = 1024;
 
     /**
      * The default time cost factor.
      *
      * @var int
      */
-    protected $time = 2;
+    protected int $time = 2;
 
     /**
      * The default threads factor.
      *
      * @var int
      */
-    protected $threads = 2;
+    protected int $threads = 2;
 
     /**
      * Indicates whether to perform an algorithm check.
      *
      * @var bool
      */
-    protected $verifyAlgorithm = false;
+    protected bool $verifyAlgorithm = false;
 
     /**
      * Create a new driver instance.
@@ -57,7 +57,7 @@ class Argon2IDriver extends AbstractDriver implements DriverInterface
     /**
      * Hash the given value.
      *
-     * @throws \RuntimeException
+     * @throws RuntimeException
      */
     public function make(string $value, array $options = []): string
     {
@@ -77,7 +77,7 @@ class Argon2IDriver extends AbstractDriver implements DriverInterface
     /**
      * Check the given plain value against a hash.
      *
-     * @throws \RuntimeException
+     * @throws RuntimeException
      */
     public function check(string $value, string $hashedValue, array $options = []): bool
     {
@@ -139,9 +139,9 @@ class Argon2IDriver extends AbstractDriver implements DriverInterface
     /**
      * Get the algorithm that should be used for hashing.
      *
-     * @return int
+     * @return string
      */
-    protected function algorithm()
+    protected function algorithm(): string
     {
         return PASSWORD_ARGON2I;
     }

@@ -17,7 +17,7 @@ class Argon2IdDriver extends Argon2IDriver
     /**
      * Check the given plain value against a hash.
      *
-     * @throws \RuntimeException
+     * @throws RuntimeException
      */
     public function check(string $value, string $hashedValue, array $options = []): bool
     {
@@ -35,9 +35,9 @@ class Argon2IdDriver extends Argon2IDriver
     /**
      * Get the algorithm that should be used for hashing.
      *
-     * @return int
+     * @return string
      */
-    protected function algorithm()
+    protected function algorithm(): string
     {
         return PASSWORD_ARGON2ID;
     }

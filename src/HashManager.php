@@ -21,16 +21,16 @@ class HashManager implements HashInterface
     /**
      * The config instance.
      *
-     * @var \Hyperf\Contract\ConfigInterface
+     * @var ConfigInterface
      */
-    protected $config;
+    protected ConfigInterface $config;
 
     /**
      * The array of created "drivers".
      *
-     * @var \HyperfExt\Hashing\Contract\DriverInterface[]
+     * @var DriverInterface[]
      */
-    protected $drivers = [];
+    protected array $drivers = [];
 
     public function __construct(ConfigInterface $config)
     {
@@ -72,7 +72,7 @@ class HashManager implements HashInterface
     /**
      * Get a driver instance.
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getDriver(?string $name = null): DriverInterface
     {
